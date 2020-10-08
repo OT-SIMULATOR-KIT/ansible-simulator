@@ -60,6 +60,8 @@ appserver2,service,restart
 - Update AnsibleSimulator utility which will Take Inventory file and Bellow mentions Tasks file as input
 
 MysqlTaskfile
+```
 dbserver,install,mysql
 dbserver,database,employeedb
 dbserver,user,spring3hibernate
+```
