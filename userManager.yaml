@@ -4,21 +4,27 @@
   vars:
     servers_to_monitor: "{{ groups['ethenhunt'] }}"
   tasks:
-    - name: install git
-      package:
-        name: git
-        state: present
-    - name: Validating if able to access group vars
-      debug:
-        msg: "Cloning codebase at {{ company_repo_location }} from {{ item }}"
-      with_items:
-        "{{ company_repos }}"
-    - name: "Cloning code from repo {{ item }}"
+    # - name: install git
+    #   package:
+    #     name: git
+    #     state: present
+    # - name: Validating if able to access group vars
+    #   debug:
+    #     msg: "Cloning codebase at {{ company_repo_location }} from {{ item }}"
+    #   with_items:
+    #     "{{ company_repos }}"
+    # - name: "Cloning code from company repos {{ item }}"
+    #   git:
+    #     repo: "{{ item.repo }}"
+    #     dest: "{{ company_repo_location }}/{{ item.folder }}"
+    #   with_items:
+    #     "{{ company_repos }}"
+    - name: "Cloning code from ethenhunt repos at {{ item.folder }} from {{ item.repo }}"
       git:
         repo: "{{ item.repo }}"
-        dest: "/data/codebase/{{ item.folder }}"
+        dest: "{{ ethenhunt_location }}/{{ item.folder }}"
       with_items:
-        "{{ company_repos }}"
+        "{{ ethenhunt_repos }}"
     # - user:
     #     name: "{{ username }}"
     #     shell: /bin/bash

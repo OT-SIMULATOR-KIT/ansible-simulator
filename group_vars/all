@@ -1,0 +1,6 @@
+company_repo_location: /data/codebase
+company_repos:
+    - folder: jenkins
+      repo: https://github.com/OT-OSM/jenkins.git
+    - folder: mysql
+      repo: https://github.com/OT-OSM/MySQL.git
