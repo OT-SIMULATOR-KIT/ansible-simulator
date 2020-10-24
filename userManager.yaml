@@ -7,3 +7,5 @@
     - user:
         name: "{{ username }}"
         shell: /bin/bash
+        generate_ssh_key: true
+        state: present
