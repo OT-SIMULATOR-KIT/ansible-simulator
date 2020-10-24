@@ -19,12 +19,18 @@
     #     dest: "{{ company_repo_location }}/{{ item.folder }}"
     #   with_items:
     #     "{{ company_repos }}"
-    - name: "Cloning code from ethenhunt repos at {{ item.folder }} from {{ item.repo }}"
+    # - name: "Cloning code from ethenhunt repos at {{ item.folder }} from {{ item.repo }}"
+    #   git:
+    #     repo: "{{ item.repo }}"
+    #     dest: "{{ ethenhunt_location }}/{{ item.folder }}"
+    #   with_items:
+    #     "{{ ethenhunt_repos }}"
+    - name: "Cloning code from owner repos at {{ item.folder }} from {{ item.repo }}"
       git:
         repo: "{{ item.repo }}"
-        dest: "{{ ethenhunt_location }}/{{ item.folder }}"
+        dest: "{{ owner_location }}/{{ item.folder }}"
       with_items:
-        "{{ ethenhunt_repos }}"
+        "{{ owner_repos }}"
     # - user:
     #     name: "{{ username }}"
     #     shell: /bin/bash
