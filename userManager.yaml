@@ -1,18 +1,32 @@
 ---
-- name: Managing users on system
-  hosts: all
-
+- name: Managing users for ethenhunt
+  hosts: ethenhunt
+  vars:
+    servers_to_monitor: "{{ groups['ethenhunt'] }}"
   tasks:
     - user:
         name: "{{ username }}"
         shell: /bin/bash
         generate_ssh_key: true
         state: present
-    - debug:
-        msg : "Creating sshconfig file for {{ item }}"
-      with_items: "{{ usergroup }}"  
     - template:
-        src: ./config.j2
+        src: "./config.j2"
+        dest: "/home/{{ username }}/.ssh/config"
+        owner: "{{ username }}"
+        mode: 0600
+
+- name: Managing users for Dev Ninja
+  hosts: devninja
+  vars:
+    servers_to_monitor: "{{ groups['devninja'] }}"
+  tasks:
+    - user:
+        name: "{{ username }}"
+        shell: /bin/bash
+        generate_ssh_key: true
+        state: present
+    - template:
+        src: "./config.j2"
         dest: "/home/{{ username }}/.ssh/config"
         owner: "{{ username }}"
         mode: 0600
