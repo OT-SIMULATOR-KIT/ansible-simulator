@@ -1,6 +1,0 @@
-ethenhunt_location: /data/codebase
-ethenhunt_repos:
-    - folder: grafana
-      repo: https://github.com/OT-OSM/grafana.git
-    - folder: prometheus
-      repo: https://github.com/OT-OSM/prometheus.git

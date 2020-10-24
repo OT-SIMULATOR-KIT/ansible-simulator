@@ -1,0 +1,3 @@
+webserver1,service,nginx,stop
+webserver1,deleteRemote,/var/www/html/index.html
+webserver2,uninstall,nginx

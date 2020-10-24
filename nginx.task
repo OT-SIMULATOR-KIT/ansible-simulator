@@ -1,0 +1,6 @@
+webserver1,install,nginx
+webserver2,install,nginx
+webserver1,copy,/tmp/sandeep.com,/var/www/html/index.html
+webserver2,copy,/tmp/asheesh.com,/var/www/html/index.html
+webserver1,service,nginx,restart
+webserver2,service,nginx,restart

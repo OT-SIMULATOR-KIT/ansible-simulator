@@ -1,15 +1,5 @@
-saurabh username=saurabh
-
-
-[ethenhunt]
-deepakg username=deepak.gupta
-sumit username=sumit
-vinod username=vinod
-
-[devninja]
-rahul username=rahul
-mehul username=mehul
-navneet username=navneet
-
-[all:vars]
-adminuser=admin
+webserver1,root,webserver1
+webserver2,root,webserver2
+appserver1,root,webserver1
+appserver2,root,webserver2
+dbserver,root,loclhost

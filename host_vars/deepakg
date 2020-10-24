@@ -1,6 +1,0 @@
-owner_location: /data/codebase
-owner_repos:
-    - folder: logstash
-      repo: https://github.com/OT-OSM/logstash.git
-    - folder: kibana
-      repo: https://github.com/OT-OSM/kibana.git
