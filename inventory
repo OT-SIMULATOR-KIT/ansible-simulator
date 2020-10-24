@@ -2,3 +2,6 @@
 deepakg username=deepak.gupta
 sumit username=sumit
 vinod username=vinod
+
+[devninja:vars]
+usergroup=["deepak.gupta","sumit","vinod"]
