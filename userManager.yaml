@@ -4,3 +4,6 @@
   tasks:
     - debug:
         msg : "Creating user {{ username }}"
+    - user:
+        name: "{{ username }}"
+        shell: /bin/bash
