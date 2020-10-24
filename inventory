@@ -1,10 +1,15 @@
 saurabh username=saurabh
+
+
 [ethenhunt]
 deepakg username=deepak.gupta
-vinod username=vinod
 sumit username=sumit
+vinod username=vinod
 
 [devninja]
 rahul username=rahul
 mehul username=mehul
 navneet username=navneet
+
+[all:vars]
+adminuser=admin

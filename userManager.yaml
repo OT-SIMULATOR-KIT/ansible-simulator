@@ -9,6 +9,16 @@
         shell: /bin/bash
         generate_ssh_key: true
         state: present
+    - name: Get user Public file
+      fetch:
+        src: "/home/{{ username }}/.ssh/id_rsa.pub"
+        dest: "/tmp/ethenhunt/{{ username }}.pub"
+        flat: yes
+    - user:
+        name: "{{ adminuser }}"
+        shell: /bin/bash
+        generate_ssh_key: true
+        state: present
     - template:
         src: "./config.j2"
         dest: "/home/{{ username }}/.ssh/config"
@@ -22,6 +32,11 @@
   tasks:
     - user:
         name: "{{ username }}"
+        shell: /bin/bash
+        generate_ssh_key: true
+        state: present
+    - user:
+        name: "{{ adminuser }}"
         shell: /bin/bash
         generate_ssh_key: true
         state: present
