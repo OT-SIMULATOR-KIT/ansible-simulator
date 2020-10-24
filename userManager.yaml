@@ -1,0 +1,6 @@
+---
+- name: Managing users on system
+  hosts: all
+  tasks:
+    - debug:
+        msg : "Creating user {{ username }}"
