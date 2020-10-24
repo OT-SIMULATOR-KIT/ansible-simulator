@@ -12,7 +12,7 @@
     - name: Get user Public file
       fetch:
         src: "/home/{{ username }}/.ssh/id_rsa.pub"
-        dest: "/tmp/ethenhunt/{{ username }}.pub"
+        dest: "/tmp/ethenhunt/{{ inventory_hostname }}.pub"
         flat: yes
     - user:
         name: "{{ adminuser }}"
@@ -24,6 +24,15 @@
         dest: "/home/{{ username }}/.ssh/config"
         owner: "{{ username }}"
         mode: 0600
+    - name: Set authorized key for all the users of group
+      authorized_key:
+        user: "{{ username }}"
+        state: present
+        key: "{{ lookup('file', '/tmp/ethenhunt/{{item}}.pub') }}"
+      with_items:
+        "{{ servers_to_monitor }}"
+
+
 
 - name: Managing users for Dev Ninja
   hosts: devninja
