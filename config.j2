@@ -1,0 +1,5 @@
+{% for host in servers_to_monitor %}
+Host {{ host }}
+    HostName {{ hostvars[host]['inventory_hostname'] }}
+    User {{ hostvars[host]['username'] }}
+{% endfor %}
